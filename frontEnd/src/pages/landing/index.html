@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduPlatform</title>
+  <link href="../../style/output.css" rel="stylesheet">
+</head>
+<body class="relative bg-gray-900 overflow-hidden">
+
+  <!-- Background Video -->
+  <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover opacity-30 -z-10">
+    <source src="../../assets/videos/teaching.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Navbar -->
+  <nav class="bg-white bg-opacity-80 shadow-md backdrop-blur-md fixed w-full z-10">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex justify-between items-center h-16">
+        <div class="text-xl font-bold text-blue-600">
+          EduPlatform
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <a href="#" class="text-gray-700 hover:text-blue-600">Home</a>
+          <a href="../courses/courses.html" class="text-gray-700 hover:text-blue-600">Courses</a>
+          <a href="#" class="text-gray-700 hover:text-blue-600">Teachers</a>
+          <a href="#" class="text-gray-700 hover:text-blue-600">About</a>
+        </div>
+        <div class="flex space-x-4">
+          <button class="px-4 py-2 text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50">
+            Login
+          </button>
+          <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative max-w-7xl mx-auto px-6 py-40 text-center text-white">
+    <h1 class="text-5xl font-bold mb-6 drop-shadow-lg">
+      Learn From the Best Teachers Online
+    </h1>
+    <p class="text-lg mb-8 drop-shadow-md">
+      A platform where teachers share knowledge and students learn through high quality video courses.
+    </p>
+    <button class="px-8 py-4 bg-blue-600 text-white rounded-lg text-lg hover:bg-blue-700 drop-shadow-md">
+      Start Learning
+    </button>
+  </section>
+
+  <!-- Features Section -->
+  <section class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-8 text-gray-900">
+    <div class="bg-white bg-opacity-80 p-6 rounded-xl shadow backdrop-blur-sm">
+      <h3 class="text-xl font-semibold mb-2">Expert Teachers</h3>
+      <p>Learn from experienced professionals.</p>
+    </div>
+    <div class="bg-white bg-opacity-80 p-6 rounded-xl shadow backdrop-blur-sm">
+      <h3 class="text-xl font-semibold mb-2">Video Courses</h3>
+      <p>High quality educational videos.</p>
+    </div>
+    <div class="bg-white bg-opacity-80 p-6 rounded-xl shadow backdrop-blur-sm">
+      <h3 class="text-xl font-semibold mb-2">Track Progress</h3>
+      <p>Monitor your learning journey.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-6">
+    <p>© 2026 EduPlatform. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
