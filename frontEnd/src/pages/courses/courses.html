@@ -9,18 +9,36 @@
 </head>
 <body class="flex flex-col min-h-screen bg-gray-50 text-gray-800">
 
-  <!-- Navbar -->
-  <nav class="bg-white shadow-md fixed w-full z-20">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="font-bold text-xl text-blue-600">EduPlatform</div>
-      <div class="space-x-4">
-        <a href="courses.html" class="hover:text-blue-600 font-medium">Courses</a>
-        <a href="../landing/index.html" class="hover:text-blue-600 font-medium">Home</a>
-        <a href="#" class="hover:text-blue-600 font-medium">Login</a>
-        <a href="#" class="hover:text-blue-600 font-medium">Sign Up</a>
-      </div>
+<!-- Navbar -->
+<nav class="bg-white shadow-md fixed w-full z-20">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <div class="font-bold text-xl text-blue-600">EduPlatform</div>
+
+    <!-- Hamburger Button (shown on mobile) -->
+    <button id="nav-toggle" class="md:hidden flex items-center px-3 py-2 border rounded text-gray-600 border-gray-600 hover:text-blue-600 hover:border-blue-600">
+      <svg class="fill-current h-5 w-5" viewBox="0 0 20 20">
+        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+      </svg>
+    </button>
+
+    <!-- Menu Links -->
+    <div id="nav-menu" class="hidden md:flex space-x-4">
+      <a href="courses.html" class="hover:text-blue-600 font-medium">Courses</a>
+      <a href="../landing/index.html" class="hover:text-blue-600 font-medium">Home</a>
+      <a href="#" class="hover:text-blue-600 font-medium">Login</a>
+      <a href="#" class="hover:text-blue-600 font-medium">Sign Up</a>
     </div>
-  </nav>
+  </div>
+
+  <!-- Mobile Menu (hidden by default) -->
+  <div id="mobile-menu" class="md:hidden hidden px-6 pb-4">
+    <a href="courses.html" class="block py-2 hover:text-blue-600">Courses</a>
+    <a href="../landing/index.html" class="block py-2 hover:text-blue-600">Home</a>
+    <a href="#" class="block py-2 hover:text-blue-600">Login</a>
+    <a href="#" class="block py-2 hover:text-blue-600">Sign Up</a>
+  </div>
+</nav>
 
   <!-- Hero -->
   <header class="pt-24 pb-12 text-center bg-gradient-to-r from-blue-600 to-blue-400 text-white">
@@ -33,25 +51,8 @@
 <!-- Courses Grid -->
 <main class="flex-1 max-w-full mx-auto px-6 py-12">
 <div id="courses-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 justify-center">
-    <!-- Example static card -->
-    <a href="../student/course.html" class="course-card bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 cursor-pointer w-72 hover:scale-105 hover:shadow-2xl">
-      <img src="../../assets/images/course-placeholder.jpg" alt="Course Image" class="w-full h-48 object-cover">
-      <div class="p-5">
-        <h2 class="font-bold text-lg mb-3">Course Title</h2>
-        <p class="text-gray-600 text-sm mb-4">Short course description goes here. Explains what the student will learn.</p>
-        <button class="w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">View Course</button>
-      </div>
-    </a>
-
-    <!-- Duplicate as needed for more cards -->
-    <a href="../student/course.html" class="course-card bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 cursor-pointer w-72 hover:scale-105 hover:shadow-2xl">
-      <img src="../../assets/images/course-placeholder.jpg" alt="Course Image" class="w-full h-48 object-cover">
-      <div class="p-5">
-        <h2 class="font-bold text-lg mb-3">Another Course</h2>
-        <p class="text-gray-600 text-sm mb-4">Short course description goes here.</p>
-        <button class="w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">View Course</button>
-      </div>
-    </a>
+  <!-- Cards will be injected here by JS -->
+</div>
 
   </div>
 </main>
@@ -63,6 +64,13 @@
       <p class="text-gray-400 text-sm">Designed for students and teachers worldwide.</p>
     </div>
   </footer>
+<script>
+  const navToggle = document.getElementById("nav-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
 
+  navToggle.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
 </body>
 </html>

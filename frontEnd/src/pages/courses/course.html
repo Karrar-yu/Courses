@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Details</title>
+  <link href="../../style/output.css" rel="stylesheet">
+  <script src="../../assets/js/courses.js" defer></script>
+  <script src="../../assets/js/course-page.js" defer></script>
+</head>
+<body class="flex flex-col min-h-screen bg-gray-50 text-gray-800">
+
+  <!-- Navbar (same as courses page with burger menu) -->
+  <nav class="bg-white shadow-md fixed w-full z-20">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="font-bold text-xl text-blue-600">EduPlatform</div>
+      <button id="nav-toggle" class="md:hidden flex items-center px-3 py-2 border rounded text-gray-600 border-gray-600 hover:text-blue-600 hover:border-blue-600">
+        <svg class="fill-current h-5 w-5" viewBox="0 0 20 20">
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+      <div id="nav-menu" class="hidden md:flex space-x-4">
+        <a href="courses.html" class="hover:text-blue-600 font-medium">Courses</a>
+        <a href="../landing/index.html" class="hover:text-blue-600 font-medium">Home</a>
+        <a href="#" class="hover:text-blue-600 font-medium">Login</a>
+        <a href="#" class="hover:text-blue-600 font-medium">Sign Up</a>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden px-6 pb-4">
+      <a href="courses.html" class="block py-2 hover:text-blue-600">Courses</a>
+      <a href="../landing/index.html" class="block py-2 hover:text-blue-600">Home</a>
+      <a href="#" class="block py-2 hover:text-blue-600">Login</a>
+      <a href="#" class="block py-2 hover:text-blue-600">Sign Up</a>
+    </div>
+  </nav>
+
+  <!-- Course Content -->
+  <main class="flex-1 max-w-7xl mx-auto px-6 pt-28 pb-12">
+    <div id="course-container" class="flex flex-col md:flex-row gap-8">
+      <!-- Left: Big Image -->
+      <div id="course-image" class="md:w-2/3">
+        <img src="" alt="Course Image" class="w-full h-auto rounded-lg shadow-lg">
+      </div>
+
+      <!-- Right: Info -->
+      <div class="md:w-1/3 flex flex-col gap-4">
+        <h1 id="course-title" class="text-3xl font-bold text-blue-600"></h1>
+        <p id="course-bio" class="text-gray-700 text-lg"></p>
+        
+        <div class="flex items-center justify-between">
+            
+          <span id="course-teacher" class="font-medium text-gray-800"></span>
+          
+          <span id="course-rating" class="bg-yellow-400 text-white px-3 py-1 rounded"></span>
+          
+        </div>
+        <button id="buy-course-btn" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300">
+    Buy
+  </button>
+        <p id="course-price" class="text-xl font-semibold text-green-600"></p>
+      </div>
+    </div>
+
+    <!-- Course Description -->
+    <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold mb-4">Course Description</h2>
+      <p id="course-description" class="text-gray-700 text-lg"></p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8 mt-auto">
+    <div class="max-w-7xl mx-auto text-center space-y-2">
+      <p>© 2026 EduPlatform. All rights reserved.</p>
+      <p class="text-gray-400 text-sm">Designed for students and teachers worldwide.</p>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    const navToggle = document.getElementById("nav-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    navToggle.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+  </script>
+</body>
+</html>

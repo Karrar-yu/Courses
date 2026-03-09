@@ -1,5 +1,7 @@
 // js/courses.js
 
+// js/courses.js
+
 // Fake API function
 function fetchCourses() {
   return new Promise((resolve) => {
@@ -10,60 +12,40 @@ function fetchCourses() {
           title: "Physics 101",
           teacher: "Dr. Ahmed Ali",
           rating: 4.8,
-          image: "https://via.placeholder.com/300x200.png?text=Physics+101",
-          bio: "Learn the fundamentals of Physics with hands-on examples."
+          image: "https://via.placeholder.com/600x400.png?text=Physics+101",
+          bio: "Learn the fundamentals of Physics with hands-on examples.",
+          description: "This course covers Newtonian mechanics, basic thermodynamics, and hands-on lab exercises.",
+          price: 49
         },
         {
           id: 2,
           title: "Introduction to Chemistry",
           teacher: "Sarah Johnson",
           rating: 4.6,
-          image: "https://via.placeholder.com/300x200.png?text=Chemistry+101",
-          bio: "Start your Chemistry journey with basic concepts."
+          image: "https://via.placeholder.com/600x400.png?text=Chemistry+101",
+          bio: "Start your Chemistry journey with basic concepts.",
+          description: "This course introduces atomic structure, periodic table, and simple chemical reactions.",
+          price: 39
         },
         {
           id: 3,
           title: "Mathematics for Beginners",
           teacher: "Ali Hassan",
           rating: 4.7,
-          image: "https://via.placeholder.com/300x200.png?text=Math+101",
-          bio: "Understand key mathematical principles and problem solving."
+          image: "https://via.placeholder.com/600x400.png?text=Math+101",
+          bio: "Understand key mathematical principles and problem solving.",
+          description: "Focus on algebra, geometry, and problem-solving skills with real examples.",
+          price: 29
         },
-        {
-          id: 3,
-          title: "Mathematics for Beginners",
-          teacher: "Ali Hassan",
-          rating: 4.7,
-          image: "https://via.placeholder.com/300x200.png?text=Math+101",
-          bio: "Understand key mathematical principles and problem solving."
-        },
-        {
-          id: 3,
-          title: "Mathematics for Beginners",
-          teacher: "Ali Hassan",
-          rating: 4.7,
-          image: "https://via.placeholder.com/300x200.png?text=Math+101",
-          bio: "Understand key mathematical principles and problem solving."
-        },
-        {
-          id: 3,
-          title: "Mathematics for Beginners",
-          teacher: "Ali Hassan",
-          rating: 4.7,
-          image: "https://via.placeholder.com/300x200.png?text=Math+101",
-          bio: "Understand key mathematical principles and problem solving."
-        },
-        {
-          id: 3,
-          title: "Mathematics for Beginners",
-          teacher: "Ali Hassan",
-          rating: 4.7,
-          image: "https://via.placeholder.com/300x200.png?text=Math+101",
-          bio: "Understand key mathematical principles and problem solving."
-        }
+      
       ]);
     }, 1000);
   });
+}
+
+// Fetch single course by ID
+function fetchCourseById(id) {
+  return fetchCourses().then(courses => courses.find(c => c.id == id));
 }
 
 // Function to create course card HTML
@@ -85,42 +67,30 @@ function createCourseCard(course) {
   return div;
 }
 function createCourseCard(course) {
-  const div = document.createElement("div");
+  const div = document.createElement("a"); // use <a> so it can link
+  div.href = `course.html?id=${course.id}`; // pass course id in URL
   div.className = `
     course-card
     bg-white 
-    rounded-lg 
-    shadow-md 
+    rounded-xl 
+    shadow-lg 
     overflow-hidden 
     transform 
     transition duration-300 
     hover:scale-105 
     hover:shadow-2xl 
     cursor-pointer
-    w-64
+    w-72
   `;
 
   div.innerHTML = `
     <img src="${course.image}" alt="${course.title}" class="w-full h-48 object-cover">
-    <div class="p-4">
-      <h3 class="text-lg font-semibold">${course.title}</h3>
-      <p class="text-gray-600 mt-2">${course.bio}</p>
-      <div class="mt-3 flex items-center justify-between">
-        <span class="font-medium">${course.teacher}</span>
-        <span class="bg-yellow-400 text-white px-2 py-1 rounded">${course.rating} ⭐</span>
-      </div>
+    <div class="p-5">
+      <h2 class="font-bold text-lg mb-3">${course.title}</h2>
+      <p class="text-gray-600 text-sm mb-4">${course.bio}</p>
+      <button class="w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">View Course</button>
     </div>
   `;
-
-  // Add click feedback
-  div.addEventListener("click", () => {
-    div.classList.add("ring-4", "ring-blue-400");
-    setTimeout(() => div.classList.remove("ring-4", "ring-blue-400"), 300);
-
-    // Example: navigate to course page (replace with real link)
-    console.log("Clicked course:", course.title);
-    // window.location.href = `course-page.html?id=${course.id}`;
-  });
 
   return div;
 }
